@@ -1,10 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+
+
+p,
+h1,
+h2,
+a {
+    font-family: 'Alata', sans-serif;
+}
+
 .App {
   text-align: center;
 }
 
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
+  height: 30vmin;
+  /* pointer-events: none; */
+  padding-bottom: 10px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -15,17 +26,30 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
+  min-height: 10vh;
+  /* display: flex; */
   flex-direction: column;
-  align-items: center;
+  align-items: baseline;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  text-align: center;
+  width: 100%;
+}
+
+.App-header a {
+    text-decoration: none;
+    /* float: right; */
+    display: inline;
+    padding: 10px 10px 10px 10px;
+}
+
+.App-header a:visited {
+    color: white;
 }
 
 .App-link {
-  color: #61dafb;
+  color: blue;
 }
 
 @keyframes App-logo-spin {
@@ -35,4 +59,27 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.MainPage {
+    padding-top: 50px;
+}
+
+.ReportPage {
+    padding-top: 50px;
+}
+
+.centerMe {
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    padding-top: 50px;
+}
+
+.infoDiv {
+    border: 2px solid black;
+    width: 60%;
+    background: #B1ACF2;
+    padding: 30px;
+    border-radius: 30px;
 }
