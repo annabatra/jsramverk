@@ -48,6 +48,10 @@ a {
     color: white;
 }
 
+.App-header a:hover {
+    color: yellow;
+}
+
 .App-link {
   color: blue;
 }
@@ -82,4 +86,54 @@ a {
     background: #B1ACF2;
     padding: 30px;
     border-radius: 30px;
+}
+
+.reportDiv {
+    border: 2px solid black;
+    width: 60%;
+    background: #B1ACF2;
+    padding: 30px;
+    border-radius: 30px;
+}
+
+.registerDiv {
+    border: 2px solid black;
+    width: 60%;
+    background: #B1ACF2;
+    padding: 30px;
+    border-radius: 30px;
+}
+
+.reports a {
+    padding: 5px;
+    color: black;
+}
+
+.reports a:hover {
+    text-transform: uppercase;
+    font-weight: bolder;
+}
+
+.reports a:visited {
+    color: black;
+}
+
+.editDiv {
+    padding-top: 20px;
+}
+
+.editButton {
+    text-decoration: none;
+    border-radius: 25px;
+    padding: 10px;
+    color: black;
+    border: 2px solid black;
+    background-color: #e7e7e7;
+}
+
+
+textarea {
+    border: 1px solid black;
+    height: 457px;
+    width: 938px;
 }

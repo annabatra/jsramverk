@@ -1,8 +1,11 @@
 import React from 'react';
-// import logo from './logo.svg';
+
 import './App.css';
-import Home from './view/Home.js';
-import Report from './view/Report.js';
+import Home from './view/home.js';
+import Reports from './view/reports.js';
+import Register from './view/register.js';
+import Login from './view/logon.js';
+import EditReport from './view/editreport.js';
 
 import {
   BrowserRouter as Router,
@@ -18,18 +21,22 @@ function App() {
     <div className="App">
         <Router>
             <header className="App-header">
-              <Link to="/">Hem</Link>
-              <Link to="/reports/week/1">Redovisningstext</Link>
+              <Link to="/">Hem</Link>|
+              <Link to="/reports/week/1">Redovisning</Link>|
+              <Link to="/register">Registrera</Link>|
+              <Link to="/logon">Logga in</Link>
+              <Link to="/editreport/1"></Link>
             </header>
           <div class="centerMe">
-            <Switch>
-              <Route path="/reports/week/1">
-                <Report />
-              </Route>
-              <Route path="/">
+          <Switch>
+            <Route exact strict path="/">
                 <Home />
-              </Route>
-            </Switch>
+            </Route>
+            <Route exact strict path="/reports/week/:id" component={Reports}/>
+            <Route exact strict path="/editreport/:id" component={EditReport}/>
+            <Route exact strict path="/logon" component={Login}/>
+            <Route exact strict path="/register" component={Register}/>
+          </Switch>
           </div>
         </Router>
     </div>
