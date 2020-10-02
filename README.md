@@ -1,3 +1,7 @@
+https://travis-ci.org/annabatra/jsramverk.svg?branch=master
+
+https://scrutinizer-ci.com/g/annabatra/jsramverk/badges/quality-score.png?b=master
+
 ## App Installation
 
 This project was installed with

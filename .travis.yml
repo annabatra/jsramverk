@@ -14,11 +14,12 @@ git:
     # - JWT_SECRET="randomSecretJustToRunSomeTests"
 
 before_script:
-    - npm install
+    - npm install -g forever
 
 script:
+    - forever start -c 'npm start' ./
     - npm test
 
+
 after_success:
-    - npm run report-coveralls
-    - npm run report-codecov
+    - forever stopall
