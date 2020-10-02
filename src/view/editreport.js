@@ -14,7 +14,7 @@ class EditReport extends React.Component {
 
     componentDidMount() {
 
-        var apiUrlId = 'http://localhost:1337/editreport/' + this.props.match.params.id;
+        var apiUrlId = 'https://me-api.jsramverk.me/editreport/' + this.props.match.params.id;
 
         fetch(apiUrlId)
             .then((response) => response.json())
@@ -37,7 +37,7 @@ class EditReport extends React.Component {
     handleSubmit = (e) => {
         e.preventDefault();
         var id = this.props.match.params.id;
-        const apiUrl = 'http://localhost:1337/editreport/' + id;
+        const apiUrl = 'https://me-api.jsramverk.me/editreport/' + id;
 
         const user = {
             "week": this.state.week,

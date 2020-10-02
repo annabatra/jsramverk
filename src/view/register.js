@@ -13,7 +13,7 @@ class Register extends React.Component {
 
   handleSubmit = (e) => {
       e.preventDefault();
-      const apiUrl = 'http://localhost:1337/register/';
+      const apiUrl = 'https://me-api.jsramverk.me/register/';
 
       const user = {
           "email": this.state.email,
