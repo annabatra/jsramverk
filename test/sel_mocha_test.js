@@ -6,6 +6,7 @@ const webdriver = require("selenium-webdriver");
 const chrome = require('selenium-webdriver/chrome');
 // const chrome = require('selenium-webdriver/chrome')
 const By = require("selenium-webdriver").By;
+const firefox = require('selenium-webdriver/firefox')
 // const chromedriver = require('chromedriver');
 
 let browser;
@@ -16,9 +17,9 @@ test.describe("Test my Me-page", function() {
     test.beforeEach(function(done) {
         this.timeout(30000);
         browser = new webdriver.Builder()
-            .withCapabilities(webdriver.Capabilities.chrome())
-            .setFirefoxOptions(new chrome.Options().headless())
-            .forBrowser("chrome")
+            .withCapabilities(webdriver.Capabilities.firefox())
+            .setFirefoxOptions(new firefox.Options().headless())
+            .forBrowser("firefox")
             .build();
 
         browser.get("http://localhost:1337/reports/week/1");
