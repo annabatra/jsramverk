@@ -1,4 +1,4 @@
-https://travis-ci.org/annabatra/jsramverk.svg?branch=master
+[![Build Status](https://travis-ci.org/annabatra/jsramverk.svg?branch=master)](https://travis-ci.org/annabatra/jsramverk)
 
 https://scrutinizer-ci.com/g/annabatra/jsramverk/badges/quality-score.png?b=master
 
