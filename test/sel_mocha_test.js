@@ -22,7 +22,7 @@ test.describe("Test my Me-page", function() {
             .forBrowser("firefox")
             .build();
 
-        browser.get("http://localhost:1337/reports/week/1");
+        browser.get("http://localhost:3000/reports/week/1");
         done();
     });
 
@@ -84,18 +84,9 @@ test.describe("Test my Me-page", function() {
         done();
     });
 
-    test.it("test to find the edit report btn", function (done) {
-        browser.findElement(By.css(".button")).then(function(element) {
-            element.getText().then(function(text) {
-                assert.equal(text, "Redigera denna rapport");
-            })
-        })
-        done();
-    });
-
     test.it("test access login page and click on email input", function (done) {
         goToNavLink("Logga in");
-        matchUrl("/login");
+        matchUrl("/logon");
         assertInput();
         done();
     });

@@ -53,7 +53,7 @@ class Register extends React.Component {
   render() {
     return (
         <div class="registerDiv">
-            <h1>Registrera användare</h1>
+            <h3>Registrera användare</h3>
             <form onSubmit={this.handleSubmit}>
             <label>
                 <p>E-post:</p>
