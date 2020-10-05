@@ -4,7 +4,7 @@ const assert = require("assert");
 const test = require("selenium-webdriver/testing");
 const webdriver = require("selenium-webdriver");
 const chrome = require('selenium-webdriver/chrome');
-const firefox = require('selenium-webdriver/firefox')
+// const chrome = require('selenium-webdriver/chrome')
 const By = require("selenium-webdriver").By;
 // const chromedriver = require('chromedriver');
 
@@ -16,12 +16,12 @@ test.describe("Test my Me-page", function() {
     test.beforeEach(function(done) {
         this.timeout(30000);
         browser = new webdriver.Builder()
-            .withCapabilities(webdriver.Capabilities.firefox())
-            .setFirefoxOptions(new firefox.Options().headless())
-            .forBrowser("firefox")
+            .withCapabilities(webdriver.Capabilities.chrome())
+            .setFirefoxOptions(new chrome.Options().headless())
+            .forBrowser("chrome")
             .build();
 
-        browser.get("http://localhost:3000/reports/week/1");
+        browser.get("http://localhost:1337/reports/week/1");
         done();
     });
 
@@ -58,13 +58,13 @@ test.describe("Test my Me-page", function() {
     test.it("Test reports/week/1", function(done) {
         // Check correct title
         browser.getTitle().then(function(title) {
-            assert.equal(title, "Min me-app");
+            assert.equal(title, "React App");
         });
 
         // Check correct heading
         browser.findElement(By.css("h2")).then(function(element) {
             element.getText().then(function(text) {
-                assert.equal(text, "Vecka 1");
+                assert.equal(text, "1");
             });
         });
 
@@ -77,23 +77,23 @@ test.describe("Test my Me-page", function() {
     });
 
     test.it("test access register page", function (done) {
-        goToNavLink("> skapa användare");
+        goToNavLink("Registrera");
         matchUrl("/register");
-        assertH3("Registrera ny användare");
+        assertH3("Registrera användare");
         done();
     });
 
     test.it("test to find the edit report btn", function (done) {
         browser.findElement(By.css(".button")).then(function(element) {
             element.getText().then(function(text) {
-                assert.equal(text, "REDIGERA INNEHÅLL");
+                assert.equal(text, "Redigera denna rapport");
             })
         })
         done();
     });
 
     test.it("test access login page and click on email input", function (done) {
-        goToNavLink("> logga in/ut");
+        goToNavLink("Logga in");
         matchUrl("/login");
         assertInput();
         done();

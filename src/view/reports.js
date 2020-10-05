@@ -40,7 +40,7 @@ class Reports extends React.Component {
             <a href={`${apiUrl}6`}>kmom06</a>
             <a href={`${apiUrl}10`}>kmom10</a>
         </nav>
-        <h1 dangerouslySetInnerHTML= {{__html: this.state.week}} ></h1>
+        <h2 dangerouslySetInnerHTML= {{__html: this.state.week}} ></h2>
         <article className="article-standard"
             dangerouslySetInnerHTML={{__html: this.state.report}} >
         </article>
