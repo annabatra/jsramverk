@@ -22,7 +22,7 @@ test.describe("Test my Me-page", function() {
             .forBrowser("firefox")
             .build();
 
-        browser.get("http://localhost:3000/reports/week/1");
+        browser.get("http://jsramverk.me/reports/week/1");
         done();
     });
 
