@@ -6,6 +6,9 @@ import Reports from './view/reports.js';
 import Register from './view/register.js';
 import Login from './view/logon.js';
 import EditReport from './view/editreport.js';
+import Chatfunction from './view/chatfunction.js';
+
+
 
 import {
   BrowserRouter as Router,
@@ -26,6 +29,7 @@ function App() {
               <Link to="/register">Registrera</Link>|
               <Link to="/logon">Logga in</Link>
               <Link to="/editreport/1"></Link>
+              <Link to="/chatfunction">Chatt</Link>
             </header>
           <div class="centerMe">
           <Switch>
@@ -36,6 +40,7 @@ function App() {
             <Route exact strict path="/editreport/:id" component={EditReport}/>
             <Route exact strict path="/logon" component={Login}/>
             <Route exact strict path="/register" component={Register}/>
+            <Route exact strict path="/chatfunction" component={Chatfunction}/>
           </Switch>
           </div>
         </Router>
