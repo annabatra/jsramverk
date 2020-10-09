@@ -138,6 +138,11 @@ textarea {
     width: 938px;
 }
 
+.new-input {
+    height: 100px;
+    width: 40%;
+    border: 2px solid #ccc;
+}
 
 .all-messages {
     width: 100%;
