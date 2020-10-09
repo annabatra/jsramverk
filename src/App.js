@@ -27,9 +27,9 @@ function App() {
               <Link to="/">Hem</Link>|
               <Link to="/reports/week/1">Redovisning</Link>|
               <Link to="/register">Registrera</Link>|
-              <Link to="/logon">Logga in</Link>
-              <Link to="/editreport/1"></Link>
+              <Link to="/logon">Logga in</Link>|
               <Link to="/chatfunction">Chatt</Link>
+              <Link to="/editreport/1"></Link>
             </header>
           <div class="centerMe">
           <Switch>

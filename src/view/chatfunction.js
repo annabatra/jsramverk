@@ -19,24 +19,23 @@ class Chatfunction extends React.Component {
     componentDidMount() {
         const allMessages = document.getElementById("all-messages");
         this.socket.on('chat message', function (message) {
-            console.log("efter socket msg");
-            let addedMessage = document.createElement("p");
+            let typedMessage = document.createElement("p");
 
-            addedMessage.textContent =
+            typedMessage.textContent =
                 "[" + message.currtime + "] "
                 + message.user + " sa: "
                 + message.msg;
 
-            allMessages.appendChild(addedMessage);
+            allMessages.appendChild(typedMessage);
         });
 
         this.socket.on('user connected', function (user) {
-            let newUserConnected = document.createElement("p");
-            newUserConnected.style.fontStyle = "italic";
+            let newChatUser = document.createElement("p");
+            newChatUser.style.fontStyle = "italic";
 
-            newUserConnected.textContent = user.user + " anslöt till chatten!";
+            newChatUser.textContent = user.user + " anslöt till chatten!";
 
-            allMessages.appendChild(newUserConnected);
+            allMessages.appendChild(newChatUser);
         })
     }
 
