@@ -18,17 +18,39 @@ class Chatfunction extends React.Component {
 
     componentDidMount() {
         const allMessages = document.getElementById("all-messages");
+
+        //först ta fram history när page laddas
+        this.socket.emit('get history');
+
+        this.socket.on('get history', function(res) {
+            res.map((msg, i) => {
+                const lastMsg = document.createElement("p");
+                lastMsg.textContent = "[" + msg.currtime + "] " + msg.user + " skrev: " + msg.msg;
+                allMessages.appendChild(lastMsg);
+            })
+        });
+
+        //töm chatten
+        this.socket.on('clear chat', function() {
+            console.log("cleared the chat");
+            window.location.reload();
+            return false;
+        })
+
+        //skickar chattmeddelande så det syns
         this.socket.on('chat message', function (message) {
             let typedMessage = document.createElement("p");
 
             typedMessage.textContent =
                 "[" + message.currtime + "] "
-                + message.user + " sa: "
+                + message.user + " skrev: "
                 + message.msg;
 
             allMessages.appendChild(typedMessage);
         });
 
+
+        //visar att en användare anslutit med namn
         this.socket.on('user connected', function (user) {
             let newChatUser = document.createElement("p");
             newChatUser.style.fontStyle = "italic";
@@ -58,6 +80,11 @@ class Chatfunction extends React.Component {
         }
     }
 
+    //tömmer chatten
+    clearChat = (event) => {
+        this.socket.emit('clear chat');
+    }
+
     checkUser = () => {
         if (!(this.state.users.includes(this.state.user))) {
             this.state.users.push(this.state.user);
@@ -84,6 +111,8 @@ class Chatfunction extends React.Component {
                     <input id="new-input" type="text" class="new-input" required name="msg" onKeyDown= {this.handleInput}
                     />
                     <p><b>Tryck enter för att skicka</b></p>
+
+                    <input className="button" type="submit" value="rensa" onClick= {this.clearChat} />
                 </article>
             </div>
         )
